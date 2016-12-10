@@ -1,24 +1,22 @@
 ﻿using AdventOfCode.Day2_Bathroom_Security.Models;
-using System;
 
 namespace AdventOfCode.Day2_Bathroom_Security
 {
 
     public class Day2
     {
-        public static string Part1(string input)
+        public static string Part1(string[] instructions)
         {
-            return Execute<ClassicKeyPad>(input);
+            return Execute<ClassicKeyPad>(instructions);
         }
 
-        public static string Part2(string input)
+        public static string Part2(string[] instructions)
         {
-            return Execute<StarKeyPad>(input);
+            return Execute<StarKeyPad>(instructions);
         }
 
-        private static string Execute<TKeyPad>(string input) where TKeyPad : IKeyPad, new()
+        private static string Execute<TKeyPad>(string[] instructions) where TKeyPad : IKeyPad, new()
         {
-            var instructions = ParseInstructions(input);
             var keyPad = new TKeyPad();
             var result = "";
 
@@ -39,13 +37,6 @@ namespace AdventOfCode.Day2_Bathroom_Security
             }
 
             return result;
-        }
-
-        private static string[] ParseInstructions(string input)
-        {
-            return input.Split(
-                "\r\n".ToCharArray(),
-                StringSplitOptions.RemoveEmptyEntries);
         }
     }
 }

@@ -6,13 +6,11 @@ namespace AdventOfCode.Day3_Squares_With_Three_Sides
 
     static class ParseExtensions
     {
-        static char[] LineSeparators = "\r\n".ToCharArray();
         static char[] NumberSeparators = " ".ToCharArray();
 
-        public static int[][] ParseNumbers(this string input)
+        public static int[][] ParseNumbers(this string[] lines)
         {
-            return input.
-                Split(LineSeparators, StringSplitOptions.RemoveEmptyEntries).
+            return lines.
                 Select(line =>
                 {
                     return line.

@@ -8,8 +8,8 @@ namespace AdventOfCode.Tests
     public class Day2Tests
     {
         [TestMethod]
-        [DataRow("ULL\r\nRRDDD\r\nLURDL\r\nUUUUD", "1985")]
-        public void TestDay2Part1(string input, string answer)
+        [DataRow(new[] { "ULL", "RRDDD", "LURDL", "UUUUD" }, "1985")]
+        public void TestDay2Part1(string[] input, string answer)
         {
             Day2.
                 Part1(input).
@@ -17,8 +17,8 @@ namespace AdventOfCode.Tests
         }
 
         [TestMethod]
-        [DataRow("ULL\r\nRRDDD\r\nLURDL\r\nUUUUD", "5DB3")]
-        public void TestDay2Part2(string input, string answer)
+        [DataRow(new[] { "ULL", "RRDDD", "LURDL", "UUUUD" }, "5DB3")]
+        public void TestDay2Part2(string[] input, string answer)
         {
             Day2.
                 Part2(input).

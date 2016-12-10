@@ -8,11 +8,11 @@ namespace AdventOfCode.Tests
     public class Day3Tests
     {
         [TestMethod]
-        [DataRow("5 10 25", 0)]
-        [DataRow("5 20 25", 0)]
-        [DataRow("6 20 25", 1)]
-        [DataRow("1 2 3\r\n2 3 4\r\n3 4 6", 2)]
-        public void TestDay3Part1(string input, int answer)
+        [DataRow(new[] { "5 10 25" }, 0)]
+        [DataRow(new[] { "5 20 25" }, 0)]
+        [DataRow(new[] { "6 20 25" }, 1)]
+        [DataRow(new[] { "1 2 3", "2 3 4", "3 4 6" }, 2)]
+        public void TestDay3Part1(string[] input, int answer)
         {
             Day3.
                 Part1(input).
@@ -20,8 +20,8 @@ namespace AdventOfCode.Tests
         }
 
         [TestMethod]
-        [DataRow("1 2 3\r\n1 2 3\r\n1 2 3", 3)]
-        public void TestDay3Part2(string input, int answer)
+        [DataRow(new[] { "1 2 3", "1 2 3", "1 2 3" }, 3)]
+        public void TestDay3Part2(string[] input, int answer)
         {
             Day3.
                 Part2(input).
