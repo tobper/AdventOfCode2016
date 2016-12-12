@@ -10,6 +10,14 @@ namespace AdventOfCode
         static void Main(string[] args)
         {
             Execute(
+                Day5_How_About_a_Nice_Game_of_Chess.Day5.Part2,
+                "ffykfhsq");
+
+            Execute(
+                Day5_How_About_a_Nice_Game_of_Chess.Day5.Part1,
+                "ffykfhsq");
+
+            Execute(
                 Day4_Security_Through_Obscurity.Day4.Part2,
                 File.ReadAllLines("Resources/Day4 Input.txt"));
 
@@ -42,10 +50,19 @@ namespace AdventOfCode
                 "DURRDLLLDDLLDLLRLULULLRDLDRRDDRDLRULURRDUUDDRLLDDLDRRLRDUDRULDLRURDUUDRDDLLDRRDRUDUDULLDDDDLDRRRLRLRDRDLURRDDLDDDUUDRDRLLLDLUDDDLUULRDRLLLRLLUULUDDDRLDUUUURULRDDURRDRLUURLUDRLRLLLDDLRDDUULRRRRURDLDDDRLDLDRRLLDRDDUDDUURDLDUUDRDLDLDDULULUDDLRDDRLRLDDLUDLLDRLUDUDDRULLRLDLLRULRUURDDRDRDRURDRRLRDLLUDDRRDRRLDDULLLDLUDRRUDLDULDRURRDURLURRLDLRDLRUDLULUDDRULRLLDUURULURULURRLURRUULRULRRRLRDLULRLRLUDURDDRUUURDRLLRRRDDLDRRRULLDLRDRULDRRLRRDLUDDRDDDUUURRLULLDRRUULULLRRRRLDDRDDLUURLLUDLLDUDLULUULUDLLUUURRRUDDDRLLLRDRUUDUUURDRULURRLRDLLUURLRDURULDRRUDURRDDLDRLDRUUDRLLUDLRRU");
         }
 
-        static void Execute<T>(Func<string[], T> action, params string[] input)
+        static void Execute<TInput, TResult>(Func<TInput, TResult> action, TInput input)
+        {
+            Execute(action, action(input));
+        }
+
+        static void Execute<TInput, TResult>(Func<TInput[], TResult> action, params TInput[] input)
+        {
+            Execute(action, action(input));
+        }
+
+        static void Execute<TInput, TResult>(Func<TInput, TResult> action, TResult result)
         {
             var method = action.GetMethodInfo();
-            var result = action(input);
             var day = method.DeclaringType.Name;
             var part = Regex.Replace(method.Name, "\\w+(\\d+)", "$1");
 
