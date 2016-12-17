@@ -10,6 +10,14 @@ namespace AdventOfCode
         static void Main(string[] args)
         {
             Execute(
+                Day6_Signals_and_Noise.Day6.Part2,
+                File.ReadAllLines("Resources/Day6 Input.txt"));
+
+            Execute(
+                Day6_Signals_and_Noise.Day6.Part1,
+                File.ReadAllLines("Resources/Day6 Input.txt"));
+
+            Execute(
                 Day5_How_About_a_Nice_Game_of_Chess.Day5.Part2,
                 "ffykfhsq");
 

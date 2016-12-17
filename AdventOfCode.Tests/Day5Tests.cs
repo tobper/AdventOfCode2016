@@ -9,6 +9,7 @@ namespace AdventOfCode.Tests
     {
         [TestMethod]
         [DataRow("abc", "18f47a30")]
+        [Ignore]
         public void TestDay5Part1(string doorId, string answer)
         {
             Day5.
@@ -18,6 +19,7 @@ namespace AdventOfCode.Tests
 
         [TestMethod]
         [DataRow("abc", "05ace8e3")]
+        [Ignore]
         public void TestDay5Part2(string doorId, string answer)
         {
             Day5.
